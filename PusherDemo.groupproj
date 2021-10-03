@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{3217631A-4E57-412B-A970-B689572B06FD}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="PusherChatManager\PusherChatManager.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="PusherPublicListener\PusherPublicListener.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="PusherChatManager">
+        <MSBuild Projects="PusherChatManager\PusherChatManager.dproj"/>
+    </Target>
+    <Target Name="PusherChatManager:Clean">
+        <MSBuild Projects="PusherChatManager\PusherChatManager.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PusherChatManager:Make">
+        <MSBuild Projects="PusherChatManager\PusherChatManager.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="PusherPublicListener">
+        <MSBuild Projects="PusherPublicListener\PusherPublicListener.dproj"/>
+    </Target>
+    <Target Name="PusherPublicListener:Clean">
+        <MSBuild Projects="PusherPublicListener\PusherPublicListener.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PusherPublicListener:Make">
+        <MSBuild Projects="PusherPublicListener\PusherPublicListener.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="PusherChatManager;PusherPublicListener"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="PusherChatManager:Clean;PusherPublicListener:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="PusherChatManager:Make;PusherPublicListener:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
