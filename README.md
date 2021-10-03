@@ -1,7 +1,7 @@
-# Delphi Example Of How To Create A Super-Fast Pusher Notification App With Delphi
+# Delphi Example Of How To Create A Super-Fast Pusher Notification App
 
 Original code: Thierry Grassia - https://github.com/ThierryGrassia/PusherDemo
 
-To accompany blog post: https://blogs.embarcadero.com/how-to-create-a-super-fast-pusher-notification-app-with-delphi/
+To accompany blog post: https://blogs.embarcadero.com/how-to-create-a-super-fast-pusher-notification-app/
 
 
